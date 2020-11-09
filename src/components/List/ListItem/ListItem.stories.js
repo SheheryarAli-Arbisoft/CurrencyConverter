@@ -13,7 +13,8 @@ storiesOf('Components/List', module)
     <Container centered>
       <ListItem
         text={text('text', 'Hello world')}
-        icon='check'
+        icon={text('icon', 'check')}
+        iconColor={text('iconColor', '#000000')}
         onPress={action('onPress')}
       />
       <ListItemSeparator />
