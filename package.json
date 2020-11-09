@@ -29,5 +29,13 @@
     "metro-react-native-babel-preset": "^0.59.0",
     "react-dom": "^16.13.1",
     "react-native-storybook-loader": "^2.0.2"
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./src"
+      ],
+      "pattern": "**/*.stories.js"
+    }
   }
 }
