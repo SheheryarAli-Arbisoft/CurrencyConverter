@@ -5,6 +5,7 @@ export const propTypes = {
   variant: PropTypes.oneOf(['large', 'normal', 'small']),
   bold: PropTypes.bool,
   colorWhite: PropTypes.bool,
+  marginBottom: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -12,4 +13,5 @@ export const defaultProps = {
   variant: 'normal',
   bold: false,
   colorWhite: false,
+  marginBottom: false,
 };

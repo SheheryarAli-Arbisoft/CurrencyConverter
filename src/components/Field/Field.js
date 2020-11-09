@@ -14,10 +14,11 @@ export const Field = ({
   disabled,
   onPress,
   onChangeText,
+  marginBottom,
   ...rest
 }) => {
   return (
-    <StyledContainer {...rest}>
+    <StyledContainer marginBottom={marginBottom} {...rest}>
       <StyledButtonContainer {...rest}>
         <Button
           value={currency}

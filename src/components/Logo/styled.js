@@ -6,6 +6,7 @@ const width = Dimensions.get('window').width;
 export const StyledContainer = styled.View`
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 `;
 
 export const StyledBackgroundImage = styled.Image`
