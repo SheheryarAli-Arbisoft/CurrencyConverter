@@ -8,6 +8,7 @@ function loadStories() {
   require("../src/components/Container/Container.stories");
   require("../src/components/Field/Field.stories");
   require("../src/components/Input/Input.stories");
+  require("../src/components/List/ListItem/ListItem.stories");
   require("../src/components/Text/Text.stories");
 }
 
@@ -16,6 +17,7 @@ const stories = [
   "../src/components/Container/Container.stories",
   "../src/components/Field/Field.stories",
   "../src/components/Input/Input.stories",
+  "../src/components/List/ListItem/ListItem.stories",
   "../src/components/Text/Text.stories",
 ];
 
