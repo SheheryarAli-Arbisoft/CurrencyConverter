@@ -4,6 +4,7 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Button } from './Button';
 import { Container } from '../Container';
+import icon from '../../assets/images/reverse.png';
 import { storyDecorator } from '../../utils/storybook';
 
 storiesOf('Components', module)
@@ -23,6 +24,7 @@ storiesOf('Components', module)
           'normal'
         )}
         themeBackground={boolean('themeBackground', false)}
+        icon={icon}
       />
     </Container>
   ));
