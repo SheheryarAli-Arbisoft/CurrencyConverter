@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { text, boolean } from '@storybook/addon-knobs';
+import { boolean } from '@storybook/addon-knobs';
 import { Container } from './Container';
 import { Text } from '../Text';
 import { storyDecorator } from '../../utils/storybook';
