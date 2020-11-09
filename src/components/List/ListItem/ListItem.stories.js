@@ -13,6 +13,7 @@ storiesOf('Components/List', module)
     <Container centered>
       <ListItem
         text={text('text', 'Hello world')}
+        icon='check'
         onPress={action('onPress')}
       />
       <ListItemSeparator />

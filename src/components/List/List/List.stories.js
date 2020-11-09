@@ -9,11 +9,13 @@ const data = [
   {
     id: 1,
     text: 'List item',
+    icon: 'check',
     onPress: action('onPress'),
   },
   {
     id: 2,
     text: 'List item',
+    icon: 'file',
     onPress: action('onPress'),
   },
   {

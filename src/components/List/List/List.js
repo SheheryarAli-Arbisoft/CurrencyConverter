@@ -9,7 +9,7 @@ export const List = ({ data, ...rest }) => {
     <StyledList
       data={data}
       renderItem={({ item }) => (
-        <ListItem text={item.text} onPress={item.onPress} />
+        <ListItem text={item.text} icon={item.icon} onPress={item.onPress} />
       )}
       keyExtractor={item => `${item.id}`}
       ItemSeparatorComponent={ListItemSeparator}
