@@ -1,4 +1,4 @@
-const spacing = {
+const padding = {
   normal: '8px',
   small: '6px',
 };
@@ -6,9 +6,9 @@ const spacing = {
 export const getPadding = variant => {
   switch (variant) {
     case 'normal':
-      return spacing.normal;
+      return padding.normal;
     case 'small':
-      return spacing.small;
+      return padding.small;
     default:
       return 0;
   }
