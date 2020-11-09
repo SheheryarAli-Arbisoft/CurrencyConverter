@@ -8,14 +8,14 @@ import {
 import { propTypes, defaultProps } from './props';
 import { Text } from '../../Text';
 
-export const ListItem = ({ text, icon, onPress, ...rest }) => {
+export const ListItem = ({ text, icon, iconColor, onPress, ...rest }) => {
   return (
     <StyledListItem onPress={onPress} {...rest}>
       <StyledTextContainer {...rest}>
         <Text>{text}</Text>
       </StyledTextContainer>
       <StyledIconContainer {...rest}>
-        <Icon name={icon} size={32} />
+        <Icon name={icon} size={32} color={iconColor} />
       </StyledIconContainer>
     </StyledListItem>
   );

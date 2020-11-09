@@ -21,6 +21,8 @@ const data = [
   {
     id: 3,
     text: 'List item',
+    icon: 'cog',
+    iconColor: '#c77e24',
     onPress: action('onPress'),
   },
   {
