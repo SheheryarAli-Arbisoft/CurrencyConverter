@@ -9,6 +9,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
         <Home />
+        <Options />
       </SafeAreaProvider>
     </ThemeProvider>
   );
