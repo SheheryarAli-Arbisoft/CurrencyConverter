@@ -10,6 +10,7 @@ const App = () => {
       <SafeAreaProvider>
         <Home />
         <Options />
+        <Themes />
       </SafeAreaProvider>
     </ThemeProvider>
   );
