@@ -19,12 +19,16 @@ export const Home = () => {
       <Field
         currency='USD'
         amount='100'
-        onPress={() => navigation.navigate('CurrencyList')}
+        onPress={() =>
+          navigation.navigate('CurrencyList', { title: 'Base Currency' })
+        }
       />
       <Field
         currency='GBP'
         amount='0.8345'
-        onPress={() => navigation.navigate('CurrencyList')}
+        onPress={() =>
+          navigation.navigate('CurrencyList', { title: 'Quote Currency' })
+        }
         disabled
       />
       <Text variant='small' colorWhite marginBottom>
