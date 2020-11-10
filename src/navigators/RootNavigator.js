@@ -7,6 +7,15 @@ import { CurrencyList } from '../screens';
 
 const Stack = createStackNavigator();
 
+const getHeaderRight = navigation => () => (
+  <TouchableOpacity
+    style={{ paddingRight: 20 }}
+    onPress={() => navigation.goBack()}
+  >
+    <Icon name='close' size={28} />
+  </TouchableOpacity>
+);
+
 export const RootNavigator = () => {
   return (
     <Stack.Navigator initialRouteName='Main' mode='modal'>
@@ -21,14 +30,7 @@ export const RootNavigator = () => {
         options={({ navigation, route }) => ({
           title: route.params.title,
           headerLeft: null,
-          headerRight: () => (
-            <TouchableOpacity
-              style={{ paddingRight: 20 }}
-              onPress={() => navigation.goBack()}
-            >
-              <Icon name='close' size={28} />
-            </TouchableOpacity>
-          ),
+          headerRight: getHeaderRight(navigation),
         })}
       />
     </Stack.Navigator>
