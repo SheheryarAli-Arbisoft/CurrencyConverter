@@ -11,6 +11,7 @@ export const StyledContainer = styled.View`
 export const StyledButtonContainer = styled.View`
   border-right-width: 1px;
   border-right-color: ${({ theme }) => theme.color.border};
+  width: 70px;
 `;
 
 export const StyledInputContainer = styled.View`

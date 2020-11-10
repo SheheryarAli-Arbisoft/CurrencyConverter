@@ -14,9 +14,11 @@ export const ListItem = ({ text, icon, iconColor, onPress, ...rest }) => {
       <StyledTextContainer {...rest}>
         <Text>{text}</Text>
       </StyledTextContainer>
-      <StyledIconContainer {...rest}>
-        <Icon name={icon} size={32} color={iconColor} />
-      </StyledIconContainer>
+      {icon !== null && (
+        <StyledIconContainer {...rest}>
+          <Icon name={icon} size={32} color={iconColor} />
+        </StyledIconContainer>
+      )}
     </StyledListItem>
   );
 };

@@ -1,52 +1,42 @@
 import React, { useContext } from 'react';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { ThemeContext } from 'styled-components';
+import { CurrencyContext } from '../contexts';
 import { Container } from '../components/Container';
 import { List } from '../components/List';
+import { currenciesList } from '../utils/currency';
 
 export const CurrencyList = () => {
+  const navigation = useNavigation();
+  const route = useRoute();
   const theme = useContext(ThemeContext);
+  const { setBaseCurrency, setQuoteCurrency } = useContext(CurrencyContext);
 
-  let data = [
-    'AUD',
-    'BGN',
-    'BRL',
-    'CAD',
-    'CHF',
-    'CNY',
-    'CZK',
-    'DKK',
-    'EUR',
-    'GBP',
-    'HKD',
-    'HRK',
-    'HUF',
-    'IDR',
-    'ILS',
-    'INR',
-    'JPY',
-    'KRW',
-    'MXN',
-    'MYR',
-    'NOK',
-    'NZD',
-    'PHP',
-    'PLN',
-    'RON',
-    'RUB',
-    'SEK',
-    'SGD',
-    'THB',
-    'TRY',
-    'USD',
-    'ZAR',
-  ];
+  const currency = route.params.currency;
+  const isBaseCurrency = route.params.isBaseCurrency;
 
-  data = data.map((item, index) => ({
-    id: index,
-    text: item,
-    icon: 'check',
-    iconColor: theme.color.blue,
-  }));
+  const data = currenciesList.map((currentCurrency, index) => {
+    const item = {
+      id: index,
+      text: currentCurrency,
+      onPress: () => {
+        if (isBaseCurrency) {
+          setBaseCurrency(currentCurrency);
+        } else {
+          setQuoteCurrency(currentCurrency);
+        }
+
+        navigation.goBack();
+      },
+    };
+
+    if (currentCurrency === currency) {
+      item.icon = 'check';
+      item.iconColor = theme.color.blue;
+    }
+
+    return item;
+  });
 
   return (
     <Container>

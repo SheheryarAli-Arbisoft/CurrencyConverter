@@ -35,9 +35,18 @@ export const Home = () => {
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
   const theme = useContext(ThemeContext);
-  const { baseCurrency, quoteCurrency, conversionRate } = useContext(
-    CurrencyContext
-  );
+  const {
+    baseCurrency,
+    setBaseCurrency,
+    quoteCurrency,
+    setQuoteCurrency,
+    conversionRate,
+  } = useContext(CurrencyContext);
+
+  const reverseCurrencies = () => {
+    setBaseCurrency(quoteCurrency);
+    setQuoteCurrency(baseCurrency);
+  };
 
   return (
     <Container centered themeBackground>
@@ -50,14 +59,22 @@ export const Home = () => {
         currency={baseCurrency}
         amount='100'
         onPress={() =>
-          navigation.navigate('CurrencyList', { title: 'Base Currency' })
+          navigation.navigate('CurrencyList', {
+            title: 'Base Currency',
+            currency: baseCurrency,
+            isBaseCurrency: true,
+          })
         }
       />
       <Field
         currency={quoteCurrency}
         amount='0.8345'
         onPress={() =>
-          navigation.navigate('CurrencyList', { title: 'Quote Currency' })
+          navigation.navigate('CurrencyList', {
+            title: 'Quote Currency',
+            currency: quoteCurrency,
+            isBaseCurrency: false,
+          })
         }
         disabled
       />
@@ -66,7 +83,12 @@ export const Home = () => {
           Date.now()
         ).format('MMMM Do, YYYY')}`}
       </Text>
-      <Button value='Reverse currencies' icon={reverse} themeBackground />
+      <Button
+        value='Reverse currencies'
+        icon={reverse}
+        onPress={reverseCurrencies}
+        themeBackground
+      />
     </Container>
   );
 };
