@@ -7,7 +7,9 @@ import { theme } from './theme';
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <SafeAreaProvider></SafeAreaProvider>
+      <SafeAreaProvider>
+        <Home />
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 };
