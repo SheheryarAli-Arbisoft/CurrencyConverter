@@ -11,5 +11,6 @@ export const StyledButton = styled.TouchableOpacity`
 
 export const StyledIcon = styled.Image`
   margin-right: 10px;
-  width: ${({ variant }) => (variant === 'normal' ? '24px' : '20px;')};
+  width: ${({ variant }) => (variant === 'normal' ? '20px' : '18px;')};
+  height: ${({ variant }) => (variant === 'normal' ? '20px' : '18px;')};
 `;

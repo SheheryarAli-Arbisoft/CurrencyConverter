@@ -5,7 +5,7 @@ export const StyledContainer = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 export const StyledButtonContainer = styled.View`

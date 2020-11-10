@@ -12,7 +12,7 @@ export const StyledContainer = styled.View`
 
 export const StyledBackgroundImage = styled.Image`
   width: ${({ small }) => (small ? `${width * 0.35}` : `${width * 0.5}`)}px;
-  height: ${({ small }) => (small ? `${height * 0.2}` : `${height * 0.3}`)}px;
+  height: ${({ small }) => (small ? `${height * 0.2}` : `${height * 0.25}`)}px;
 `;
 
 export const StyledLogoImage = styled.Image`

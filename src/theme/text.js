@@ -1,7 +1,7 @@
 const size = {
   large: '30px',
-  normal: '22px',
-  small: '18px',
+  normal: '20px',
+  small: '16px',
 };
 
 export const getTextSize = variant => {
