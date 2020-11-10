@@ -12,16 +12,22 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <ThemeProvider theme={theme}>
-        <SafeAreaProvider>
+      <SafeAreaProvider>
+        <ThemeProvider theme={theme}>
           <Stack.Navigator initialRouteName='Home'>
-            <Stack.Screen name='Home' component={Home} />
+            <Stack.Screen
+              name='Home'
+              component={Home}
+              options={{
+                headerShown: false,
+              }}
+            />
             <Stack.Screen name='CurrencyList' component={CurrencyList} />
             <Stack.Screen name='Options' component={Options} />
             <Stack.Screen name='Themes' component={Themes} />
           </Stack.Navigator>
-        </SafeAreaProvider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </SafeAreaProvider>
     </NavigationContainer>
   );
 };
