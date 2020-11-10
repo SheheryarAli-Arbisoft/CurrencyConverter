@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import moment from 'moment';
 import { useNavigation } from '@react-navigation/native';
@@ -42,6 +42,18 @@ export const Home = () => {
     setQuoteCurrency,
     conversionRate,
   } = useContext(CurrencyContext);
+  const [baseAmount, setBaseAmount] = useState('');
+  const [convertedAmount, setConvertedAmount] = useState('');
+
+  const handleConversion = text => {
+    setBaseAmount(text);
+    if (text === '') {
+      setConvertedAmount('');
+    } else {
+      const amount = parseFloat(text) * conversionRate;
+      setConvertedAmount(amount.toFixed(2));
+    }
+  };
 
   const reverseCurrencies = () => {
     setBaseCurrency(quoteCurrency);
@@ -57,7 +69,8 @@ export const Home = () => {
       </Text>
       <Field
         currency={baseCurrency}
-        amount='100'
+        amount={baseAmount}
+        onChangeText={text => handleConversion(text)}
         onPress={() =>
           navigation.navigate('CurrencyList', {
             title: 'Base Currency',
@@ -68,7 +81,7 @@ export const Home = () => {
       />
       <Field
         currency={quoteCurrency}
-        amount='0.8345'
+        amount={convertedAmount}
         onPress={() =>
           navigation.navigate('CurrencyList', {
             title: 'Quote Currency',
