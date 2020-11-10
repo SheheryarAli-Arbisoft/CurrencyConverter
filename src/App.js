@@ -11,6 +11,7 @@ const App = () => {
         <Home />
         <Options />
         <Themes />
+        <CurrencyList />
       </SafeAreaProvider>
     </ThemeProvider>
   );
