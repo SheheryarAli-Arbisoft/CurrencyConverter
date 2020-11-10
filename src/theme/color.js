@@ -6,5 +6,5 @@ export const black = '#000000';
 export const white = '#ffffff';
 export const border = '#cecece';
 export const light = '#f9f9f9';
-export const disabled = '#c9c9c9';
+export const disabled = '#cecece';
 export const transparent = 'transparent';

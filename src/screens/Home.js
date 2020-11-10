@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity, StatusBar } from 'react-native';
 import moment from 'moment';
 import { useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -62,6 +62,7 @@ export const Home = () => {
 
   return (
     <Container centered themeBackground>
+      <StatusBar barStyle='light-content' backgroundColor={theme.color.blue} />
       {getSettingsView(navigation, theme, insets)}
       <Logo />
       <Text variant='large' colorWhite bold marginBottom>

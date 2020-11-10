@@ -6,4 +6,5 @@ export const StyledInput = styled.TextInput`
   font-size: ${({ theme }) => theme.text.getTextSize('normal')};
   background-color: ${({ theme, editable }) =>
     editable ? theme.color.light : theme.color.disabled};
+  color: ${({ theme }) => theme.color.black};
 `;

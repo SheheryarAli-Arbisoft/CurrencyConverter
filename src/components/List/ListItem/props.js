@@ -10,6 +10,6 @@ export const propTypes = {
 export const defaultProps = {
   onPress: () => {},
   text: '',
-  icon: string,
+  icon: null,
   iconColor: '#000000',
 };

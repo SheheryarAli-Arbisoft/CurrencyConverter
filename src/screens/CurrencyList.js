@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { StatusBar } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { ThemeContext } from 'styled-components';
 import { CurrencyContext } from '../contexts';
@@ -40,6 +41,7 @@ export const CurrencyList = () => {
 
   return (
     <Container>
+      <StatusBar barStyle='dark-content' backgroundColor={theme.color.white} />
       <List data={data} />
     </Container>
   );

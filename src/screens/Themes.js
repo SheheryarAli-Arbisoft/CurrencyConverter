@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { StatusBar } from 'react-native';
 import { ThemeContext } from 'styled-components';
 import { Container } from '../components/Container';
 import { ListItem, ListItemSeparator } from '../components/List';
@@ -8,6 +9,7 @@ export const Themes = () => {
 
   return (
     <Container>
+      <StatusBar barStyle='dark-content' backgroundColor={theme.color.white} />
       <ListItem text='Blue' icon='circle' iconColor={theme.color.blue} />
       <ListItemSeparator />
 
