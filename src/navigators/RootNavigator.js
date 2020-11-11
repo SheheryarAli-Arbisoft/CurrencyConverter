@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { MainNavigator } from './MainNavigator';
 import { CurrencyList } from '../screens';
+import { loadAllData } from '../actions/currency';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +19,12 @@ const getHeaderRight = navigation => () => (
 );
 
 export const RootNavigator = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadAllData());
+  }, []);
+
   return (
     <Stack.Navigator initialRouteName='Main' mode='modal'>
       <Stack.Screen

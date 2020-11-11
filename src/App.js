@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
@@ -9,25 +9,20 @@ import {
   MultipleThemesContextProvider,
 } from './contexts';
 import { RootNavigator } from './navigators';
-import { loadAllData } from './actions/currency';
 import { store, persistor } from './utils/store';
 
 const App = () => {
-  useEffect(() => {
-    store.dispatch(loadAllData());
-  }, []);
-
   return (
     <NavigationContainer>
       <SafeAreaProvider>
         <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <MultipleThemesContextProvider>
+          <MultipleThemesContextProvider>
+            <PersistGate loading={null} persistor={persistor}>
               <CurrencyContextProvider>
                 <RootNavigator />
               </CurrencyContextProvider>
-            </MultipleThemesContextProvider>
-          </PersistGate>
+            </PersistGate>
+          </MultipleThemesContextProvider>
         </Provider>
       </SafeAreaProvider>
     </NavigationContainer>
