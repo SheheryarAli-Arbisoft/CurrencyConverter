@@ -10,7 +10,7 @@ import { useThemeContext } from '../../hooks';
 export const Settings = ({ ...rest }) => {
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
-  const theme = useThemeContext();
+  const { theme } = useThemeContext();
 
   return (
     <StyledContainer insets={insets} {...rest}>

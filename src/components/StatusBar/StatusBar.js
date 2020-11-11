@@ -4,7 +4,7 @@ import { propTypes, defaultProps } from './props';
 import { useThemeContext } from '../../hooks';
 
 export const StatusBar = ({ themeBackground, ...rest }) => {
-  const theme = useThemeContext();
+  const { theme } = useThemeContext();
 
   return (
     <StyledStatusBar

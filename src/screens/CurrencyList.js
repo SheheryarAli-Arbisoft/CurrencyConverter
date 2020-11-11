@@ -8,7 +8,7 @@ import { List } from '../components/List';
 export const CurrencyList = () => {
   const navigation = useNavigation();
   const route = useRoute();
-  const theme = useThemeContext();
+  const { theme } = useThemeContext();
   const {
     setBaseCurrency,
     setQuoteCurrency,

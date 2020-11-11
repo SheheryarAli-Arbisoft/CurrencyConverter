@@ -5,7 +5,7 @@ import { StatusBar } from '../components/StatusBar';
 import { ListItem, ListItemSeparator } from '../components/List';
 
 export const Themes = () => {
-  const theme = useThemeContext();
+  const { theme } = useThemeContext();
 
   return (
     <Container>
