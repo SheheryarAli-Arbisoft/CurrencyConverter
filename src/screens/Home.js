@@ -1,41 +1,18 @@
 import React, { useContext, useState } from 'react';
-import { View, TouchableOpacity } from 'react-native';
 import moment from 'moment';
 import { useNavigation } from '@react-navigation/native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { ThemeContext } from 'styled-components';
 import { CurrencyContext } from '../contexts';
 import { Container } from '../components/Container';
 import { StatusBar } from '../components/StatusBar';
+import { Settings } from '../components/Settings';
 import { Logo } from '../components/Logo';
 import { Text } from '../components/Text';
 import { Field } from '../components/Field';
 import { Button } from '../components/Button';
 import reverse from '../assets/images/reverse.png';
 
-const getSettingsView = (navigation, theme, insets) => {
-  const style = {
-    position: 'absolute',
-    top: 0,
-    paddingTop: insets.top + 10,
-    width: '100%',
-    alignItems: 'flex-end',
-  };
-
-  return (
-    <View style={style}>
-      <TouchableOpacity onPress={() => navigation.push('Options')}>
-        <Icon name='cog' size={36} color={theme.color.white} />
-      </TouchableOpacity>
-    </View>
-  );
-};
-
 export const Home = () => {
   const navigation = useNavigation();
-  const insets = useSafeAreaInsets();
-  const theme = useContext(ThemeContext);
   const {
     baseCurrency,
     setBaseCurrency,
@@ -64,7 +41,7 @@ export const Home = () => {
   return (
     <Container centered themeBackground>
       <StatusBar themeBackground />
-      {getSettingsView(navigation, theme, insets)}
+      <Settings />
       <Logo />
       <Text variant='large' colorWhite bold marginBottom>
         Currency Converter
