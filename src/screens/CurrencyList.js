@@ -42,7 +42,7 @@ export const CurrencyList = () => {
   return (
     <Container>
       <StatusBar />
-      <List data={data} />
+      <List />
     </Container>
   );
 };
