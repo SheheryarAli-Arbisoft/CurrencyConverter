@@ -1,13 +1,14 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext } from 'react';
 import { useSelector } from 'react-redux';
+import { useCurrency } from '../hooks';
 import { ratesSelector } from '../selectors/currency';
 
 export const CurrencyContext = createContext();
 
 export const CurrencyContextProvider = ({ children }) => {
   const rates = useSelector(ratesSelector);
-  const [baseCurrency, setBaseCurrency] = useState('USD');
-  const [quoteCurrency, setQuoteCurrency] = useState('GBP');
+  const [baseCurrency, setBaseCurrency] = useCurrency('base', 'USD');
+  const [quoteCurrency, setQuoteCurrency] = useCurrency('quote', 'GBP');
 
   const getConversionRate = () => {
     const baseRate = rates[baseCurrency];
