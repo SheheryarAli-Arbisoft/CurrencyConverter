@@ -8,7 +8,7 @@ import { List } from '../components/List';
 export const CurrencyList = () => {
   const navigation = useNavigation();
   const route = useRoute();
-  const { theme } = useThemeContext();
+  const theme = useThemeContext();
   const {
     setBaseCurrency,
     setQuoteCurrency,
@@ -34,8 +34,8 @@ export const CurrencyList = () => {
     };
 
     if (currentCurrency === currency) {
-      item.icon = 'check';
-      item.iconColor = theme.color.blue;
+      item.icon = 'check-circle';
+      item.iconColor = theme.color.primary;
     }
 
     return item;
