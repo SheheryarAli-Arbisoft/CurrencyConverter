@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { StatusBar } from 'react-native';
 import { ThemeContext } from 'styled-components';
 import { Container } from '../components/Container';
+import { StatusBar } from '../components/StatusBar';
 import { ListItem, ListItemSeparator } from '../components/List';
 
 export const Themes = () => {
@@ -9,7 +9,7 @@ export const Themes = () => {
 
   return (
     <Container>
-      <StatusBar barStyle='dark-content' backgroundColor={theme.color.white} />
+      <StatusBar />
       <ListItem text='Blue' icon='circle' iconColor={theme.color.blue} />
       <ListItemSeparator />
 

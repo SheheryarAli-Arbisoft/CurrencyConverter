@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { StatusBar } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { ThemeContext } from 'styled-components';
 import { CurrencyContext } from '../contexts';
 import { Container } from '../components/Container';
+import { StatusBar } from '../components/StatusBar';
 import { List } from '../components/List';
 import { currenciesList } from '../utils/currency';
 
@@ -41,7 +41,7 @@ export const CurrencyList = () => {
 
   return (
     <Container>
-      <StatusBar barStyle='dark-content' backgroundColor={theme.color.white} />
+      <StatusBar />
       <List data={data} />
     </Container>
   );

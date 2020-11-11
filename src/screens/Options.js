@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
-import { Linking, Alert, StatusBar } from 'react-native';
+import React from 'react';
+import { Linking, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { ThemeContext } from 'styled-components';
 import { Container } from '../components/Container';
+import { StatusBar } from '../components/StatusBar';
 import { ListItem, ListItemSeparator } from '../components/List';
 
 export const Options = () => {
   const navigation = useNavigation();
-  const theme = useContext(ThemeContext);
 
   const URL = 'https://fixer.io';
 
@@ -19,7 +18,7 @@ export const Options = () => {
 
   return (
     <Container>
-      <StatusBar barStyle='dark-content' backgroundColor={theme.color.white} />
+      <StatusBar />
       <ListItem
         text='Themes'
         icon='chevron-right'

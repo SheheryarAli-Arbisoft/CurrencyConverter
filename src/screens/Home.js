@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { View, TouchableOpacity, StatusBar } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import moment from 'moment';
 import { useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { ThemeContext } from 'styled-components';
 import { CurrencyContext } from '../contexts';
 import { Container } from '../components/Container';
+import { StatusBar } from '../components/StatusBar';
 import { Logo } from '../components/Logo';
 import { Text } from '../components/Text';
 import { Field } from '../components/Field';
@@ -62,7 +63,7 @@ export const Home = () => {
 
   return (
     <Container centered themeBackground>
-      <StatusBar barStyle='light-content' backgroundColor={theme.color.blue} />
+      <StatusBar themeBackground />
       {getSettingsView(navigation, theme, insets)}
       <Logo />
       <Text variant='large' colorWhite bold marginBottom>
