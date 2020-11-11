@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
 import { StyledStatusBar } from './styled';
 import { propTypes, defaultProps } from './props';
+import { useThemeContext } from '../../hooks';
 
 export const StatusBar = ({ themeBackground, ...rest }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
 
   return (
     <StyledStatusBar

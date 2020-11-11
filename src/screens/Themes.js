@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import React from 'react';
+import { useThemeContext } from '../hooks';
 import { Container } from '../components/Container';
 import { StatusBar } from '../components/StatusBar';
 import { ListItem, ListItemSeparator } from '../components/List';
 
 export const Themes = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
 
   return (
     <Container>

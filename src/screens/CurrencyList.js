@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { ThemeContext } from 'styled-components';
+import { useThemeContext } from '../hooks';
 import { CurrencyContext } from '../contexts';
 import { Container } from '../components/Container';
 import { StatusBar } from '../components/StatusBar';
@@ -10,7 +10,7 @@ import { currenciesList } from '../utils/currency';
 export const CurrencyList = () => {
   const navigation = useNavigation();
   const route = useRoute();
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
   const { setBaseCurrency, setQuoteCurrency } = useContext(CurrencyContext);
 
   const currency = route.params.currency;

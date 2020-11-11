@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ThemeContext } from 'styled-components';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { StyledContainer } from './styled';
 import { propTypes, defaultProps } from './props';
+import { useThemeContext } from '../../hooks';
 
 export const Settings = ({ ...rest }) => {
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
-  const theme = useContext(ThemeContext);
+  const theme = useThemeContext();
 
   return (
     <StyledContainer insets={insets} {...rest}>
