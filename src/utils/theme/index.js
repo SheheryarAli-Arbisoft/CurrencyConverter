@@ -7,3 +7,23 @@ export const theme = {
   color,
   button,
 };
+
+export const blueTheme = {
+  ...theme,
+  color: { ...theme.color, primary: theme.color.blue },
+};
+
+export const orangeTheme = {
+  ...theme,
+  color: { ...theme.color, primary: theme.color.orange },
+};
+
+export const greenTheme = {
+  ...theme,
+  color: { ...theme.color, primary: theme.color.green },
+};
+
+export const purpleTheme = {
+  ...theme,
+  color: { ...theme.color, primary: theme.color.purple },
+};

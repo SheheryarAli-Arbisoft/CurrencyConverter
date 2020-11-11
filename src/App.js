@@ -4,12 +4,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { ThemeProvider } from 'styled-components';
-import { CurrencyContextProvider } from './contexts';
+import {
+  CurrencyContextProvider,
+  MultipleThemesContextProvider,
+} from './contexts';
 import { RootNavigator } from './navigators';
 import { loadAllData } from './actions/currency';
 import { store, persistor } from './utils/store';
-import { theme } from './utils/theme';
 
 const App = () => {
   useEffect(() => {
@@ -21,11 +22,11 @@ const App = () => {
       <SafeAreaProvider>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
-            <ThemeProvider theme={theme}>
+            <MultipleThemesContextProvider>
               <CurrencyContextProvider>
                 <RootNavigator />
               </CurrencyContextProvider>
-            </ThemeProvider>
+            </MultipleThemesContextProvider>
           </PersistGate>
         </Provider>
       </SafeAreaProvider>
