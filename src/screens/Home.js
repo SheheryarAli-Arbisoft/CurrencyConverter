@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import { useNavigation } from '@react-navigation/native';
-import { CurrencyContext } from '../contexts';
+import { useCurrencyContext } from '../hooks';
 import { Container } from '../components/Container';
 import { StatusBar } from '../components/StatusBar';
 import { Settings } from '../components/Settings';
@@ -19,7 +19,7 @@ export const Home = () => {
     quoteCurrency,
     setQuoteCurrency,
     conversionRate,
-  } = useContext(CurrencyContext);
+  } = useCurrencyContext();
   const [baseAmount, setBaseAmount] = useState('');
   const [convertedAmount, setConvertedAmount] = useState('');
 

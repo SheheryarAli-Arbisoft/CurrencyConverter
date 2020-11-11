@@ -1,17 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { useThemeContext } from '../hooks';
-import { CurrencyContext } from '../contexts';
+import { useThemeContext, useCurrencyContext } from '../hooks';
 import { Container } from '../components/Container';
 import { StatusBar } from '../components/StatusBar';
 import { List } from '../components/List';
-import { currenciesList } from '../utils/currency';
 
 export const CurrencyList = () => {
   const navigation = useNavigation();
   const route = useRoute();
   const theme = useThemeContext();
-  const { setBaseCurrency, setQuoteCurrency } = useContext(CurrencyContext);
+  const {
+    setBaseCurrency,
+    setQuoteCurrency,
+    currenciesList,
+  } = useCurrencyContext();
 
   const currency = route.params.currency;
   const isBaseCurrency = route.params.isBaseCurrency;
@@ -42,7 +44,7 @@ export const CurrencyList = () => {
   return (
     <Container>
       <StatusBar />
-      <List />
+      <List data={data} />
     </Container>
   );
 };

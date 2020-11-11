@@ -10,7 +10,7 @@ export const CurrencyContextProvider = ({ children }) => {
   const [quoteCurrency, setQuoteCurrency] = useState('GBP');
   const [conversionRate] = useState(0.8345);
 
-  const getCurrenciesList = () => Object.keys(rates);
+  const getCurrenciesList = () => (rates !== null ? Object.keys(rates) : []);
 
   const contextValues = {
     baseCurrency,
