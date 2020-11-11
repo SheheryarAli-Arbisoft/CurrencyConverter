@@ -22,7 +22,7 @@ export const CurrencyContextProvider = ({ children }) => {
     setBaseCurrency,
     quoteCurrency,
     setQuoteCurrency,
-    conversionRate: getConversionRate(),
+    conversionRate: rates !== null ? getConversionRate() : 0,
     currenciesList: getCurrenciesList(),
   };
 
