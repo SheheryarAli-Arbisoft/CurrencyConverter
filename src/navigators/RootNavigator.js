@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import SplashScreen from 'react-native-splash-screen';
 import { MainNavigator } from './MainNavigator';
 import { CurrencyList } from '../screens';
 import { loadAllData } from '../actions/currency';
@@ -22,6 +23,7 @@ export const RootNavigator = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    SplashScreen.hide();
     dispatch(loadAllData());
   }, []);
 
