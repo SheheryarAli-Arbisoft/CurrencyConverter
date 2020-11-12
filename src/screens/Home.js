@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { KeyboardAvoidingView } from 'react-native';
 import moment from 'moment';
 import { useNavigation } from '@react-navigation/native';
 import { useCurrencyContext } from '../hooks';
@@ -38,50 +39,52 @@ export const Home = () => {
   }, [baseAmount, conversionRate]);
 
   return (
-    <Container centered themeBackground>
-      <StatusBar themeBackground />
-      <Settings />
-      <Logo />
-      <Text variant='large' colorWhite bold marginBottom>
-        Currency Converter
-      </Text>
-      <Field
-        currency={baseCurrency}
-        amount={baseAmount}
-        onChangeText={text => setBaseAmount(text)}
-        onPress={() =>
-          navigation.navigate('CurrencyList', {
-            title: 'Base Currency',
-            currency: baseCurrency,
-            isBaseCurrency: true,
-          })
-        }
-      />
-      <Field
-        currency={quoteCurrency}
-        amount={convertedAmount}
-        onPress={() =>
-          navigation.navigate('CurrencyList', {
-            title: 'Quote Currency',
-            currency: quoteCurrency,
-            isBaseCurrency: false,
-          })
-        }
-        disabled
-      />
-      <Text variant='small' colorWhite marginBottom>
-        {`1 ${baseCurrency} = ${conversionRate.toFixed(
-          2
-        )} ${quoteCurrency} as of ${moment(Date.now()).format(
-          'MMMM Do, YYYY'
-        )}`}
-      </Text>
-      <Button
-        value='Reverse currencies'
-        icon={reverse}
-        onPress={reverseCurrencies}
-        themeBackground
-      />
-    </Container>
+    <KeyboardAvoidingView style={{ flex: 1 }} behavior='height'>
+      <Container centered themeBackground>
+        <StatusBar themeBackground />
+        <Settings />
+        <Logo />
+        <Text variant='large' colorWhite bold marginBottom>
+          Currency Converter
+        </Text>
+        <Field
+          currency={baseCurrency}
+          amount={baseAmount}
+          onChangeText={text => setBaseAmount(text)}
+          onPress={() =>
+            navigation.navigate('CurrencyList', {
+              title: 'Base Currency',
+              currency: baseCurrency,
+              isBaseCurrency: true,
+            })
+          }
+        />
+        <Field
+          currency={quoteCurrency}
+          amount={convertedAmount}
+          onPress={() =>
+            navigation.navigate('CurrencyList', {
+              title: 'Quote Currency',
+              currency: quoteCurrency,
+              isBaseCurrency: false,
+            })
+          }
+          disabled
+        />
+        <Text variant='small' colorWhite marginBottom>
+          {`1 ${baseCurrency} = ${conversionRate.toFixed(
+            2
+          )} ${quoteCurrency} as of ${moment(Date.now()).format(
+            'MMMM Do, YYYY'
+          )}`}
+        </Text>
+        <Button
+          value='Reverse currencies'
+          icon={reverse}
+          onPress={reverseCurrencies}
+          themeBackground
+        />
+      </Container>
+    </KeyboardAvoidingView>
   );
 };
