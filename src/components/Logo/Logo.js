@@ -5,8 +5,7 @@ import { propTypes, defaultProps } from './props';
 import backgroundImage from '../../assets/images/background.png';
 import logoImage from '../../assets/images/logo.png';
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
+const { width, height } = Dimensions.get('window');
 
 // Background image dimensions
 const BACKGROUND_WIDTH = width * 0.5;
@@ -33,6 +32,12 @@ export const Logo = ({ ...rest }) => {
     const keyboardWillShowSub = Keyboard.addListener('keyboardWillShow', e => {
       Animated.timing(backgroundWidth, {
         toValue: small ? BACKGROUND_WIDTH : BACKGROUND_WIDTH_SMALL,
+        duration: e.duration,
+        useNativeDriver: false,
+      }).start();
+
+      Animated.timing(backgroundHeight, {
+        toValue: small ? BACKGROUND_HEIGHT : BACKGROUND_HEIGHT_SMALL,
         duration: e.duration,
         useNativeDriver: false,
       }).start();

@@ -1,8 +1,18 @@
 import styled from 'styled-components';
 
+const getMarginBottom = (marginBottom, variant) => {
+  if (marginBottom) {
+    if (variant === 'large') {
+      return '20px';
+    }
+    return '10px';
+  }
+  return 0;
+};
+
 export const StyledContainer = styled.View`
   margin-bottom: ${({ marginBottom, variant }) =>
-    marginBottom ? (variant === 'large' ? '20px' : '10px') : 0};
+    getMarginBottom(marginBottom, variant)};
 `;
 
 export const StyledText = styled.Text`

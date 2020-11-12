@@ -15,8 +15,7 @@ export const CurrencyList = () => {
     currenciesList,
   } = useCurrencyContext();
 
-  const currency = route.params.currency;
-  const isBaseCurrency = route.params.isBaseCurrency;
+  const { currency, isBaseCurrency } = route.params;
 
   const data = currenciesList.map((currentCurrency, index) => {
     const item = {

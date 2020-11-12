@@ -4,14 +4,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const useCurrency = (name, initialValue) => {
   const [value, setValue] = useState(initialValue);
 
-  const setNewValue = value => {
-    AsyncStorage.setItem(name, value).then(() => setValue(value));
+  const setNewValue = newValue => {
+    AsyncStorage.setItem(name, newValue).then(() => setValue(newValue));
   };
 
   useEffect(() => {
-    AsyncStorage.getItem(name).then(value => {
-      if (value) {
-        setValue(value);
+    AsyncStorage.getItem(name).then(loadedValue => {
+      if (loadedValue) {
+        setValue(loadedValue);
       }
     });
   }, []);
